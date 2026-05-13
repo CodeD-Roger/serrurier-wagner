@@ -92,7 +92,7 @@ export default function InterventionZone() {
         display: 'grid',
         gridTemplateColumns: 'minmax(280px, 1fr) minmax(320px, 1.1fr)',
         gap: 48,
-        alignItems: 'start',
+        alignItems: 'stretch',
       }}>
 
         {/* Carte Google Maps */}
@@ -105,16 +105,14 @@ export default function InterventionZone() {
             background: '#F3EFE7',
             borderRadius: 12,
             overflow: 'hidden',
-            aspectRatio: '4/5',
-            position: 'sticky',
-            top: 32,
+            minHeight: 320,
           }}
         >
           <iframe
             src="https://maps.google.com/maps?q=Mulhouse,+Haut-Rhin,+France&t=&z=10&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
-            style={{ border: 0, display: 'block', filter: 'saturate(0.85) contrast(0.95)' }}
+            style={{ border: 0, display: 'block', height: '100%', filter: 'saturate(0.85) contrast(0.95)' }}
             loading="lazy"
             title="Zone d'intervention Serrurier Wagner — Haut-Rhin"
             referrerPolicy="no-referrer-when-downgrade"

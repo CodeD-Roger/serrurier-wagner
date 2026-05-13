@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Phone, Zap, ShieldCheck } from 'lucide-react'
 
-const PHONE = '06 XX XX XX XX'
+const PHONE = '03 74 47 52 51'
 
 const containerVariants = {
   hidden: {},

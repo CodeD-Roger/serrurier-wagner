@@ -190,7 +190,7 @@ export default function InterventionZone() {
               <p className="text-gray-400 text-sm">
                 Pas sûr d'être dans notre zone ?{' '}
                 <a
-                  href="tel:06XXXXXXXX"
+                  href="tel:0374475251"
                   className="text-gold-dark hover:text-gold font-medium underline underline-offset-2 transition-colors duration-200"
                   aria-label="Appelez pour vérifier votre zone d'intervention"
                 >

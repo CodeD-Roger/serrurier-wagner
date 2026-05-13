@@ -196,6 +196,8 @@ function Row({ item, active, onEnter }: { item: Prestation; active: boolean; onE
   return (
     <div
       onMouseEnter={onEnter}
+      onClick={onEnter}
+      className="services-row-grid"
       style={{
         position: "relative",
         display: "grid",
@@ -205,7 +207,7 @@ function Row({ item, active, onEnter }: { item: Prestation; active: boolean; onE
         padding: "26px 0 26px 16px",
         borderBottom: "1px solid #d9cfb6",
         cursor: "pointer",
-        background: active ? "rgba(163,126,58,.06)" : "transparent",
+        background: active ? "rgba(30,64,175,.04)" : "transparent",
         transition: "background .2s ease, padding-left .25s ease",
         paddingLeft: active ? 28 : 16,
       }}
@@ -219,7 +221,7 @@ function Row({ item, active, onEnter }: { item: Prestation; active: boolean; onE
         transition: "height .25s ease",
       }} />
 
-      <span style={{
+      <span className="services-row-number" style={{
         fontFamily: "var(--serif)",
         fontWeight: 500,
         fontSize: 48,
@@ -238,7 +240,7 @@ function Row({ item, active, onEnter }: { item: Prestation; active: boolean; onE
           <span style={{ width: 5, height: 5, borderRadius: "50%", background: color }} />
           {item.cat}
         </div>
-        <div style={{
+        <div className="services-row-title" style={{
           fontFamily: "var(--serif)",
           fontWeight: 500,
           fontSize: 32,
@@ -246,8 +248,8 @@ function Row({ item, active, onEnter }: { item: Prestation; active: boolean; onE
           letterSpacing: "-.005em",
           color: "var(--ink)",
         }}>{item.title}</div>
-        <div style={{
-          maxHeight: active ? 80 : 0,
+        <div className="services-row-desc" style={{
+          maxHeight: active ? 120 : 0,
           opacity: active ? 1 : 0,
           overflow: "hidden",
           transition: "max-height .3s ease, opacity .25s ease, margin-top .25s ease",
@@ -256,10 +258,13 @@ function Row({ item, active, onEnter }: { item: Prestation; active: boolean; onE
           maxWidth: 560,
         }}>
           {item.desc}
+          <span className="services-row-mobile-meta" style={{ display: "none", marginTop: 6, color: "var(--ink-2)", fontWeight: 500 }}>
+            {item.delai} · {item.prix}
+          </span>
         </div>
       </div>
 
-      <div style={{
+      <div className="services-row-meta" style={{
         fontFamily: "var(--sans)",
         fontSize: 12.5,
         fontWeight: 500,
@@ -270,7 +275,7 @@ function Row({ item, active, onEnter }: { item: Prestation; active: boolean; onE
         <div style={{ color: "var(--ink-3)", marginTop: 3, fontWeight: 400 }}>{item.prix}</div>
       </div>
 
-      <span style={{
+      <span className="services-row-arrow" style={{
         justifySelf: "end",
         width: 38, height: 38,
         borderRadius: "50%",
@@ -314,12 +319,14 @@ export default function Services() {
         à la lettre.
       </h2>
 
-      <div style={{
+      <div className="services-main-grid" style={{
         display: "grid",
         gridTemplateColumns: "minmax(380px, 460px) 1fr",
         gap: 56,
       }}>
-        <Preview item={active} />
+        <div className="services-preview">
+          <Preview item={active} />
+        </div>
 
         <div>
           <div className="label" style={{

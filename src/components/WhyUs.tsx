@@ -108,6 +108,7 @@ export default function WhyUs() {
 
       {/* 3 articles — cartes */}
       <motion.div
+        className="why-articles-grid"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
@@ -223,7 +224,7 @@ export default function WhyUs() {
         </div>
 
         {/* Grille des stats */}
-        <div style={{
+        <div className="why-stats-grid" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(4, 1fr)',
           gap: '0 32px',

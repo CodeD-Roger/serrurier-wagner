@@ -88,7 +88,7 @@ export default function InterventionZone() {
       </motion.header>
 
       {/* Corps : carte + liste */}
-      <div style={{
+      <div className="zone-grid" style={{
         display: 'grid',
         gridTemplateColumns: 'minmax(280px, 1fr) minmax(320px, 1.1fr)',
         gap: 48,
@@ -101,6 +101,7 @@ export default function InterventionZone() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+          className="zone-map"
           style={{
             background: '#F3EFE7',
             borderRadius: 12,

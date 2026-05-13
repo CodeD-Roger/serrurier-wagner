@@ -109,7 +109,64 @@
   }
 }
 
-/* Focus visible accessible */
+/* ─── Responsive ────────────────────────────────────── */
+
+/* Sections : padding réduit sur mobile */
+@media (max-width: 639px) {
+  #services, #pourquoi-nous, #zone, #avis {
+    padding-top: 56px !important;
+    padding-bottom: 64px !important;
+  }
+}
+
+/* Services — grille principale */
+@media (max-width: 767px) {
+  .services-main-grid  { grid-template-columns: 1fr !important; }
+  .services-preview    { display: none !important; }
+  .services-row-grid   {
+    grid-template-columns: 44px 1fr !important;
+    gap: 10px !important;
+    padding-left: 12px !important;
+  }
+  .services-row-meta   { display: none !important; }
+  .services-row-arrow  { display: none !important; }
+  .services-row-number { font-size: 32px !important; }
+  .services-row-title  { font-size: 20px !important; }
+  .services-row-desc          { max-width: 100% !important; }
+  .services-row-mobile-meta  { display: block !important; }
+}
+
+/* WhyUs — grilles articles et stats */
+@media (max-width: 639px) {
+  .why-articles-grid { grid-template-columns: 1fr !important; }
+  .why-stats-grid    { grid-template-columns: repeat(2, 1fr) !important; gap: 24px !important; }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .why-articles-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .why-stats-grid    { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* InterventionZone — empilement mobile */
+@media (max-width: 767px) {
+  .zone-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .zone-map {
+    min-height: 240px !important;
+    aspect-ratio: 16 / 9 !important;
+    position: static !important;
+  }
+}
+
+/* Testimonials — grille */
+@media (max-width: 639px) {
+  .testimonials-grid { grid-template-columns: 1fr !important; }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .testimonials-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* ─── Focus visible accessible */
 :focus-visible {
   outline: 2px solid #D4AF37;
   outline-offset: 3px;

@@ -116,6 +116,7 @@ export default function Testimonials() {
         </motion.div>
 
         <motion.div
+          className="testimonials-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, 1fr)',

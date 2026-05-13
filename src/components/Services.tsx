@@ -309,7 +309,7 @@ export default function Services() {
     }}>
       <h2 style={{
         fontFamily: "var(--serif)",
-        fontSize: "clamp(56px, 9vw, 132px)",
+        fontSize: "clamp(48px, 7vw, 88px)",
         lineHeight: .94,
         letterSpacing: "-.015em",
         fontWeight: 500,

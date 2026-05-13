@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --ink: #13151a;
-  --ink-2: #2a2d36;
-  --ink-3: #5b5f6a;
+  --ink: #0B1F4D;
+  --ink-2: #2a3a6e;
+  --ink-3: #5B6680;
   --paper: #f4efe6;
   --paper-2: #ece5d6;
   --paper-3: #dfd6c1;
   --brass: #1E40AF;
   --brass-2: #3B82F6;
   --rouge: #DC2626;
-  --serif: "Playfair Display", "Times New Roman", serif;
+  --serif: "Cormorant Garamond", "Times New Roman", serif;
   --sans: "Inter", system-ui, sans-serif;
 }
 

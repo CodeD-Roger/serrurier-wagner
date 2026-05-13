@@ -32,7 +32,7 @@ export default function CTAFinal() {
 
           <h2 style={{
             fontFamily: '"Cormorant Garamond", serif',
-            fontSize: 'clamp(48px, 7vw, 92px)',
+            fontSize: 'clamp(48px, 7vw, 88px)',
             fontWeight: 500,
             lineHeight: 0.97,
             letterSpacing: '-0.01em',

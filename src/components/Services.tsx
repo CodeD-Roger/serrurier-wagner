@@ -295,7 +295,7 @@ export default function Services() {
   return (
     <section id="services" style={{
       width: "100%",
-      background: "#f4efe6",
+      background: "#ffffff",
       padding: "80px 6vw 96px",
       fontFamily: "var(--sans)",
       color: "var(--ink)",

@@ -30,8 +30,16 @@ export default function CTAFinal() {
         >
           <p className="text-white/60 text-xs font-semibold tracking-[0.2em] uppercase mb-5">Urgence serrurerie</p>
 
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-black text-white leading-tight mb-4 tracking-tight">
-            Besoin d'un serrurier
+          <h2 style={{
+            fontFamily: '"Cormorant Garamond", serif',
+            fontSize: 'clamp(48px, 7vw, 92px)',
+            fontWeight: 500,
+            lineHeight: 0.97,
+            letterSpacing: '-0.01em',
+            color: '#fff',
+            margin: '0 0 16px',
+          }}>
+            Besoin d&rsquo;un serrurier
             <br />maintenant ?
           </h2>
 

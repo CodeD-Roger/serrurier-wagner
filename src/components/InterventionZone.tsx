@@ -69,7 +69,7 @@ export default function InterventionZone() {
 
         <h2 style={{
           fontFamily: '"Cormorant Garamond", serif',
-          fontSize: 'clamp(44px, 6.5vw, 80px)',
+          fontSize: 'clamp(48px, 7vw, 88px)',
           fontWeight: 500,
           lineHeight: 0.97,
           letterSpacing: '-0.01em',

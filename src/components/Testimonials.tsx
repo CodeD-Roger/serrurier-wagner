@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion'
 import { Star } from 'lucide-react'
 
+const INK   = '#0B1F4D'
+const BLEU  = '#1742A8'
+const MUTED = '#5B6680'
+
 const testimonials = [
   {
     name: 'Marie-Claire T.',
@@ -46,7 +50,7 @@ function Stars({ count }: { count: number }) {
   return (
     <div className="flex gap-0.5" aria-label={`${count} étoiles sur 5`}>
       {Array.from({ length: count }).map((_, i) => (
-        <Star key={i} size={13} className="text-gold fill-gold" />
+        <Star key={i} size={13} className="text-amber-400 fill-amber-400" />
       ))}
     </div>
   )
@@ -54,30 +58,69 @@ function Stars({ count }: { count: number }) {
 
 export default function Testimonials() {
   return (
-    <section id="avis" className="py-24 px-6 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
+    <section
+      id="avis"
+      style={{
+        width: '100%',
+        background: '#F8F9FB',
+        padding: '88px 6vw 96px',
+        fontFamily: '"Inter", system-ui, sans-serif',
+        color: INK,
+      }}
+    >
+      <div style={{ maxWidth: 1152, margin: '0 auto' }}>
 
         <motion.div
-          className="text-center mb-16"
+          style={{ textAlign: 'center', marginBottom: 56 }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.65 }}
         >
-          <p className="text-gold-dark text-xs font-semibold tracking-[0.2em] uppercase mb-4">Ce que disent nos clients</p>
-          <h2 className="font-display text-4xl sm:text-5xl font-bold text-gray-900 mb-5 tracking-tight">
+          <p style={{
+            fontFamily: '"Inter", sans-serif',
+            fontWeight: 500,
+            fontSize: 11,
+            letterSpacing: '0.22em',
+            textTransform: 'uppercase',
+            color: BLEU,
+            marginBottom: 18,
+          }}>
+            Ce que disent nos clients
+          </p>
+
+          <h2 style={{
+            fontFamily: '"Cormorant Garamond", serif',
+            fontSize: 'clamp(48px, 7vw, 88px)',
+            fontWeight: 500,
+            lineHeight: 0.96,
+            letterSpacing: '-0.01em',
+            color: INK,
+            margin: '0 0 20px',
+          }}>
             Témoignages
           </h2>
-          <div className="flex items-center justify-center gap-2">
+
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
             <Stars count={5} />
-            <span className="text-gray-900 font-semibold ml-1 text-sm">4,9</span>
-            <span className="text-gray-400 text-sm">/ 5 · 147 avis</span>
+            <span style={{ color: INK, fontWeight: 600, fontSize: 14, marginLeft: 4 }}>4,9</span>
+            <span style={{ color: MUTED, fontSize: 14 }}>/ 5 · 147 avis</span>
           </div>
-          <div className="w-10 h-px bg-gold mx-auto mt-7" />
+
+          <div style={{
+            width: 40,
+            height: 1,
+            background: '#DC2626',
+            margin: '24px auto 0',
+          }} />
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-5"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: 20,
+          }}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -87,25 +130,53 @@ export default function Testimonials() {
             <motion.article
               key={name}
               variants={cardVariants}
-              className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-gold/20 transition-all duration-300 flex flex-col"
+              style={{
+                background: '#fff',
+                border: '1px solid #E6E9F0',
+                borderRadius: 16,
+                padding: '24px',
+                boxShadow: '0 1px 4px rgba(11,31,77,0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                transition: 'box-shadow 0.25s ease, border-color 0.25s ease',
+              }}
             >
-              <div className="flex items-center justify-between mb-5">
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
                 <Stars count={rating} />
-                <span className="text-[11px] text-gray-400 bg-gray-50 px-2.5 py-1 rounded-full border border-gray-100">
+                <span style={{
+                  fontSize: 11,
+                  color: MUTED,
+                  background: '#F8F9FB',
+                  padding: '4px 10px',
+                  borderRadius: 999,
+                  border: '1px solid #E6E9F0',
+                }}>
                   {service}
                 </span>
               </div>
 
-              <p className="text-gray-600 text-sm leading-relaxed flex-1 mb-6">
+              <p style={{
+                color: MUTED,
+                fontSize: 14,
+                lineHeight: 1.7,
+                flex: 1,
+                marginBottom: 24,
+              }}>
                 « {text} »
               </p>
 
-              <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                paddingTop: 16,
+                borderTop: '1px solid #E6E9F0',
+              }}>
                 <div>
-                  <p className="text-gray-900 font-semibold text-sm">{name}</p>
-                  <p className="text-gray-400 text-xs mt-0.5">{location}</p>
+                  <p style={{ color: INK, fontWeight: 600, fontSize: 14 }}>{name}</p>
+                  <p style={{ color: MUTED, fontSize: 12, marginTop: 2 }}>{location}</p>
                 </div>
-                <span className="text-gray-300 text-xs">{date}</span>
+                <span style={{ color: '#C5CAD9', fontSize: 12 }}>{date}</span>
               </div>
             </motion.article>
           ))}
